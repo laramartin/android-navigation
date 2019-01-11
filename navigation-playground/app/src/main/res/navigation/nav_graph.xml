@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/homeFragment">
+
+    <fragment
+            android:id="@+id/firstLevelFragment"
+            android:name="eu.laramartin.navigationplayground.FirstLevelFragment"
+            android:label="fragment_first_level"
+            tools:layout="@layout/fragment_first_level">
+        <action
+                android:id="@+id/action_firstLevelFragment_to_secondLevelFragment"
+                app:destination="@id/secondLevelFragment"
+                app:popUpTo="@+id/homeFragment"/>
+    </fragment>
+    <fragment
+            android:id="@+id/homeFragment"
+            android:name="eu.laramartin.navigationplayground.HomeFragment"
+            android:label="fragment_home"
+            tools:layout="@layout/fragment_home">
+        <action
+                android:id="@+id/action_homeFragment_to_firstLevelFragment"
+                app:destination="@id/firstLevelFragment"/>
+    </fragment>
+    <fragment
+            android:id="@+id/secondLevelFragment"
+            android:name="eu.laramartin.navigationplayground.SecondLevelFragment"
+            android:label="fragment_second_level"
+            tools:layout="@layout/fragment_second_level"/>
+</navigation>
