@@ -16,7 +16,9 @@ class BoatFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val id = BoatFragmentArgs.fromBundle(arguments!!).id
+
+        val id = arguments?.getString("id_dl")?.toInt()
+            ?: BoatFragmentArgs.fromBundle(arguments!!).id
 
         val boat = BOATS.getBoat(id)
 
