@@ -22,6 +22,10 @@ class WelcomeFragment : Fragment() {
             Navigation.createNavigateOnClickListener(R.id.action_welcomeFragment_to_registrationFragment)
         )
 
+        view.findViewById<Button>(R.id.button_login).setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_welcomeFragment_to_homeFragment)
+        )
+
         return view
     }
 }
