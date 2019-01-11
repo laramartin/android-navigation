@@ -4,7 +4,7 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph_home"
             app:startDestination="@id/feedFragment">
 
-    <fragment android:id="@+id/feedFragment" android:name="eu.laramartin.rentaboat.FeedFragment"
+    <fragment android:id="@+id/feedFragment" android:name="eu.laramartin.rentaboat.feed.FeedFragment"
               android:label="fragment_feed" tools:layout="@layout/fragment_feed"/>
     <fragment android:id="@+id/ordersFragment" android:name="eu.laramartin.rentaboat.OrdersFragment"
               android:label="fragment_orders" tools:layout="@layout/fragment_orders"/>

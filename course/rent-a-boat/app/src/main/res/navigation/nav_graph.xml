@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph.xml"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph.xml"
             app:startDestination="@id/welcomeFragment">
 
-    <fragment android:id="@+id/welcomeFragment" android:name="eu.laramartin.rentaboat.WelcomeFragment"
-              android:label="fragment_welcome" tools:layout="@layout/fragment_welcome">
-        <action android:id="@+id/action_welcomeFragment_to_registrationFragment"
+    <fragment
+            android:id="@+id/welcomeFragment"
+            android:name="eu.laramartin.rentaboat.WelcomeFragment"
+            android:label="fragment_welcome"
+            tools:layout="@layout/fragment_welcome">
+        <action
+                android:id="@+id/action_welcomeFragment_to_registrationFragment"
                 app:destination="@id/registrationFragment"/>
-        <action android:id="@+id/action_welcomeFragment_to_homeFragment" app:destination="@id/homeFragment"/>
+        <action
+                android:id="@+id/action_welcomeFragment_to_homeFragment"
+                app:destination="@id/homeFragment"/>
     </fragment>
-    <fragment android:id="@+id/registrationFragment" android:name="eu.laramartin.rentaboat.RegistrationFragment"
-              android:label="fragment_registration" tools:layout="@layout/fragment_registration"/>
-    <fragment android:id="@+id/homeFragment" android:name="eu.laramartin.rentaboat.HomeFragment"
-              android:label="fragment_home" tools:layout="@layout/fragment_home"/>
+    <fragment
+            android:id="@+id/registrationFragment"
+            android:name="eu.laramartin.rentaboat.RegistrationFragment"
+            android:label="fragment_registration"
+            tools:layout="@layout/fragment_registration"/>
+    <fragment
+            android:id="@+id/homeFragment"
+            android:name="eu.laramartin.rentaboat.HomeFragment"
+            android:label="fragment_home"
+            tools:layout="@layout/fragment_home">
+        <action
+                android:id="@+id/action_homeFragment_to_boatFragment"
+                app:destination="@id/boatFragment"/>
+    </fragment>
+    <fragment
+            android:id="@+id/boatFragment"
+            android:name="eu.laramartin.rentaboat.BoatFragment"
+            android:label="fragment_boat"
+            tools:layout="@layout/fragment_boat">
+        <argument
+                android:name="id"
+                app:argType="integer"/>
+    </fragment>
 </navigation>
