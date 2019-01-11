@@ -4,6 +4,7 @@ package eu.laramartin.rentaboat
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
+import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,8 +25,12 @@ class HomeFragment : Fragment() {
         view.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
             .setupWithNavController(navController = navHostFragment.navController)
 
+        val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
+
+        navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
+            toolbar.title = destination.label
+        }
+
         return view
     }
-
-
 }
