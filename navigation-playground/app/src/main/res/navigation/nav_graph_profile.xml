@@ -15,5 +15,4 @@
             android:name="eu.laramartin.navigationplayground.RateFragment"
             android:label="Rate"
             tools:layout="@layout/fragment_rate"/>
-
 </navigation>
