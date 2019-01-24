@@ -14,6 +14,22 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        val isTablet = context!!.resources.getBoolean(R.bool.isTablet)
+
+        if (isTablet) {
+            val navHostFragment = fragmentManager!!.findFragmentById(R.id.nav_container)
+
+//            view.findViewById<Button>(R.id.settings_textview).setOnClickListener(
+//                Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_firstLevelFragment)
+
+//            )
+
+        } else {
+            val navHostFragment = fragmentManager!!.findFragmentById(R.id.nav_container_profile)
+        }
+
+        return view
     }
 }
