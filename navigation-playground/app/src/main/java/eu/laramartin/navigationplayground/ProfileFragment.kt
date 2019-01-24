@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 
 class ProfileFragment : Fragment() {
 
@@ -20,12 +21,7 @@ class ProfileFragment : Fragment() {
 
         val isTablet = context!!.resources.getBoolean(R.bool.isTablet)
 
-        if (isTablet) {
-//            val navHostFragment = fragmentManager!!.findFragmentById(R.id.nav_container_profile)
-
-//            val navController = navHostFragment!!.findNavController()
-
-
+        if (! isTablet) {
             view.findViewById<TextView>(R.id.settings_textview).setOnClickListener(
                 Navigation.createNavigateOnClickListener(R.id.settingsFragment)
             )
@@ -35,14 +31,15 @@ class ProfileFragment : Fragment() {
             )
 
         } else {
-//            val navHostFragment = fragmentManager!!.findFragmentById(R.id.nav_container)
+            val navHostFragment = childFragmentManager.findFragmentById(R.id.nav_container_profile) as NavHostFragment
 
-            view.findViewById<TextView>(R.id.settings_textview).setOnClickListener(
-                Navigation.createNavigateOnClickListener(R.id.settingsFragment)
-            )
-            view.findViewById<TextView>(R.id.rate_textview).setOnClickListener(
-                Navigation.createNavigateOnClickListener(R.id.rateFragment)
-            )
+            view.findViewById<TextView>(R.id.settings_textview).setOnClickListener {
+                navHostFragment.navController.navigate(R.id.settingsFragment)
+            }
+
+            view.findViewById<TextView>(R.id.rate_textview).setOnClickListener {
+                navHostFragment.navController.navigate(R.id.rateFragment)
+            }
         }
 
         return view
