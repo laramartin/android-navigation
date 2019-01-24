@@ -23,10 +23,16 @@
         <action
                 android:id="@+id/action_homeFragment_to_firstLevelFragment"
                 app:destination="@id/firstLevelFragment"/>
+        <action android:id="@+id/action_homeFragment_to_profileFragment" app:destination="@id/profileFragment"/>
     </fragment>
     <fragment
             android:id="@+id/secondLevelFragment"
             android:name="eu.laramartin.navigationplayground.SecondLevelFragment"
             android:label="fragment_second_level"
             tools:layout="@layout/fragment_second_level"/>
+    <fragment
+            android:id="@+id/profileFragment"
+            android:name="eu.laramartin.navigationplayground.ProfileFragment"
+            android:label="Profile"
+            tools:layout="@layout/fragment_profile"/>
 </navigation>
