@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.navigation.Navigation
 
 class HomeFragment : Fragment() {
@@ -20,10 +19,6 @@ class HomeFragment : Fragment() {
 
         view.findViewById<Button>(R.id.button_home).setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_firstLevelFragment)
-        )
-
-        view.findViewById<TextView>(R.id.text_bottom_nav).setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_profileFragment)
         )
 
         return view
