@@ -8,7 +8,7 @@
     <fragment
             android:id="@+id/firstLevelFragment"
             android:name="eu.laramartin.navigationplayground.FirstLevelFragment"
-            android:label="fragment_first_level"
+            android:label="First level"
             tools:layout="@layout/fragment_first_level">
         <action
                 android:id="@+id/action_firstLevelFragment_to_secondLevelFragment"
@@ -18,17 +18,18 @@
     <fragment
             android:id="@+id/homeFragment"
             android:name="eu.laramartin.navigationplayground.HomeFragment"
-            android:label="fragment_home"
+            android:label="Home"
             tools:layout="@layout/fragment_home">
         <action
                 android:id="@+id/action_homeFragment_to_firstLevelFragment"
                 app:destination="@id/firstLevelFragment"/>
-        <action android:id="@+id/action_homeFragment_to_profileFragment" app:destination="@id/profileFragment"/>
+        <action android:id="@+id/action_homeFragment_to_profileFragment"
+                app:destination="@id/profileFragment"/>
     </fragment>
     <fragment
             android:id="@+id/secondLevelFragment"
             android:name="eu.laramartin.navigationplayground.SecondLevelFragment"
-            android:label="fragment_second_level"
+            android:label="Second level"
             tools:layout="@layout/fragment_second_level"/>
     <fragment
             android:id="@+id/profileFragment"
